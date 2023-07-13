@@ -1,0 +1,33 @@
+﻿@model List<gnk_invest_test.Models.Sale>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id из сделки</th>
+            <th>Название сделки</th>
+            <th>Id контрагента</th>
+            <th>Название контрагента</th>
+            <th>Адрес регистрации</th>
+            <th>Почтовый адрес</th>
+            <th>Отметка о смерти</th>
+            <th>Дата смерти</th>
+            <th>Отметка о банкротстве</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sale in Model)
+        {
+            <tr>
+                <td>@sale.Id</td>
+                <td>@sale.Name</td>
+                <td>@sale.Contractor.Id</td>
+                <td>@sale.Contractor.Name</td>
+                <td>@sale.Contractor.LegalAddress</td>
+                <td>@sale.Contractor.PostalAddress</td>
+                <td>@sale.Contractor.ContractorIndividual.OtmetkaOSmertiZaemschika</td>
+                <td>@sale.Contractor.ContractorIndividual.DataSmertiZaemschika</td>
+                <td>@sale.Contractor.ContractorIndividual.Bankrot</td>
+            </tr>
+        }
+    </tbody>
+</table>
